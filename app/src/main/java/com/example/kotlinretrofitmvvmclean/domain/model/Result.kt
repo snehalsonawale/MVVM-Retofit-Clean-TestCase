@@ -1,4 +1,4 @@
-package com.example.kotlinretrofitmvvmclean
+package com.example.kotlinretrofitmvvmclean.domain.model
 
 data class Result(
     val _id: String,
