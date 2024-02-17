@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -12,17 +11,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
-import androidx.compose.material3.Divider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.kotlinretrofitmvvmclean.domain.model.QuoteList
@@ -77,9 +71,6 @@ fun Greeting(item:List<QuoteList>) {
     Log.d("##itemlist1",item.toString())
     var lit : List<Result> = item.get(0).results
     var lit2 : List<Result> = item[0].results
-
-   // StudentRow(item.get(0).results)
-   // StudentRow(lit)
     LazyColumn{
         items(lit2){
             StudentRow3(it)
@@ -101,7 +92,6 @@ fun StudentRow(itemlist: List<Result>) {
 @Composable
 fun StudentRow3(result1:Result)
 {
-    Log.d("##result1",result1.toString())
     Card(modifier = Modifier
         .padding(all = 10.dp)
         .fillMaxWidth()) {
